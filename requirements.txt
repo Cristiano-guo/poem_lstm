@@ -1,0 +1,35 @@
+# 核心深度学习
+torch>=2.1
+transformers>=4.40
+peft>=0.10
+accelerate>=0.27
+# QLoRA 显存压缩（4060 8GB 可选）
+bitsandbytes>=0.43; platform_system != "Windows"
+
+# 中文文本处理
+opencc-python-reimplemented>=0.1.7
+jieba>=0.42.1
+pypinyin>=0.50.0
+
+# 评估指标
+nltk>=3.8
+rouge-chinese>=1.0.3
+
+# 可视化
+matplotlib>=3.7
+wordcloud>=1.9
+seaborn>=0.13
+
+# Web 演示
+gradio>=4.0
+
+# API SDK（按需安装）
+openai>=1.30        # 兼容 DeepSeek
+dashscope>=1.17     # 通义千问
+zhipuai>=2.0        # 智谱 GLM
+
+# 工具
+pyyaml>=6.0
+tqdm>=4.66
+numpy>=1.24
+pandas>=2.0

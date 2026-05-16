@@ -1,0 +1,120 @@
+# =============================================================
+# 吟诗作赋实验 - 全局配置
+# =============================================================
+
+paths:
+  # chinese-poetry 原始数据根目录
+  raw_root: "../course_lab_reference-main/course_lab_reference-main/course_lab_data/poem_generation/chinese-poetry"
+  # 预处理输出目录
+  processed_root: "./data/processed"
+  # 评测 prompt 文件
+  prompts_file: "./prompts/test_prompts.json"
+  # 评估结果输出目录
+  results_root: "./eval/results"
+  # 可视化输出目录
+  viz_root: "./viz"
+  # 模型 checkpoint 根目录
+  ckpt_root: "./ckpts"
+
+# -------------------------------------------------------------
+# 数据预处理
+# -------------------------------------------------------------
+preprocess:
+  # 是否做繁体 -> 简体
+  to_simplified: true
+  # 单首诗最少 / 最多字数
+  min_chars: 16
+  max_chars: 200
+  # 五言绝句、七言绝句、五言律诗、七言律诗
+  enable_formats: ["jueju5", "jueju7", "lvshi5", "lvshi7", "ci"]
+  # 训练 / 验证集划分比例
+  val_ratio: 0.02
+  random_seed: 42
+
+# -------------------------------------------------------------
+# Char-LSTM (M1)
+# -------------------------------------------------------------
+lstm:
+  # 选择训练数据：合并所有绝句以增大数据量
+  train_files: ["tang_jueju5.txt", "tang_jueju7.txt"]
+  # 词表
+  vocab_min_count: 2
+  # 模型
+  embedding_dim: 128
+  hidden_dim: 384
+  num_layers: 2
+  dropout: 0.3
+  # 训练
+  seq_len: 48
+  batch_size: 128
+  lr: 1.0e-3
+  epochs: 40
+  grad_clip: 5.0
+  # 生成
+  max_gen_len: 64
+  temperature: 1.0
+  top_k: 8
+  device: "cuda"  # cpu / cuda
+
+# -------------------------------------------------------------
+# API 调用 (M2)
+# -------------------------------------------------------------
+api:
+  # 启用的提供商：deepseek / qwen / zhipu
+  enabled: ["deepseek"]
+  # 三种 prompt 策略
+  strategies: ["zero_shot", "few_shot", "cot"]
+  # 通用生成参数
+  temperature: 0.7
+  max_tokens: 512
+  # API key 从环境变量读取
+  env_keys:
+    deepseek: "DEEPSEEK_API_KEY"
+    qwen: "DASHSCOPE_API_KEY"
+    zhipu: "ZHIPU_API_KEY"
+  endpoints:
+    deepseek: "https://api.deepseek.com/v1"
+  models:
+    deepseek: "deepseek-v4-flash"
+    qwen: "qwen-plus"
+    zhipu: "glm-4-flash"
+  # 重试与限速
+  retry: 3
+  retry_wait: 2
+
+# -------------------------------------------------------------
+# GPT-2 LoRA (M3, 可选)
+# -------------------------------------------------------------
+gpt2:
+  # 蒸馏小模型，4060 8GB 可全参或 LoRA
+  base_model: "uer/gpt2-distil-chinese-cluecorpussmall"
+  use_lora: true
+  lora_r: 8
+  lora_alpha: 16
+  lora_dropout: 0.1
+  target_modules: ["c_attn"]
+  # 训练数据
+  train_files: ["tang_jueju5.txt", "tang_jueju7.txt", "tang_lvshi5.txt", "tang_lvshi7.txt"]
+  max_length: 96
+  batch_size: 8
+  grad_accum: 4
+  lr: 5.0e-4
+  epochs: 3
+  fp16: true
+
+# -------------------------------------------------------------
+# 评估
+# -------------------------------------------------------------
+eval:
+  # 自动指标
+  metrics: ["format_acc", "rhyme_acc", "repetition", "bleu", "rouge", "distinct"]
+  # 押韵评估：把末字普通话韵母归并为同韵
+  rhyme_merge: true
+
+# -------------------------------------------------------------
+# Gradio Demo
+# -------------------------------------------------------------
+gradio:
+  server_name: "127.0.0.1"
+  server_port: 7860
+  share: false

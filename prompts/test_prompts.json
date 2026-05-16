@@ -1,0 +1,759 @@
+{
+  "version": "1.0",
+  "description": "吟诗作赋实验固定评测 prompt 集，共 50 条，按 5 大主题 × 10 类输入形式组织。所有方法使用同一份 prompt 评测。",
+  "themes": [
+    "春雨",
+    "边塞",
+    "离别",
+    "月夜",
+    "江南"
+  ],
+  "input_types": [
+    "topic_only",
+    "topic_keywords",
+    "first_line",
+    "acrostic",
+    "ci_pai",
+    "image_description",
+    "style_imitation",
+    "format_jueju5",
+    "format_jueju7",
+    "format_lvshi"
+  ],
+  "prompts": [
+    {
+      "id": "P01",
+      "theme": "春雨",
+      "input_type": "topic_only",
+      "input": {
+        "topic": "春雨"
+      },
+      "instruction": "请以“春雨”为主题，写一首七言绝句。要求每句七字，四句，偶数句押韵。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P02",
+      "theme": "春雨",
+      "input_type": "topic_keywords",
+      "input": {
+        "topic": "春雨",
+        "keywords": [
+          "细雨",
+          "桃花",
+          "燕子"
+        ]
+      },
+      "instruction": "请围绕主题“春雨”，并使用关键词“细雨、桃花、燕子”，创作一首五言绝句。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P03",
+      "theme": "春雨",
+      "input_type": "first_line",
+      "input": {
+        "first_line": "好雨知时节"
+      },
+      "instruction": "请以“好雨知时节”为首句，续写完成一首五言绝句。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P04",
+      "theme": "春雨",
+      "input_type": "acrostic",
+      "input": {
+        "acrostic_chars": "春雨绵绵"
+      },
+      "instruction": "请写一首藏头诗（七言绝句），每句首字依次为：春、雨、绵、绵。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7,
+        "acrostic": "春雨绵绵"
+      }
+    },
+    {
+      "id": "P05",
+      "theme": "春雨",
+      "input_type": "ci_pai",
+      "input": {
+        "rhythmic": "如梦令",
+        "topic": "春雨"
+      },
+      "instruction": "请按《如梦令》词牌格律创作一首词，主题为“春雨”。",
+      "format_spec": {
+        "type": "ci",
+        "rhythmic": "如梦令"
+      }
+    },
+    {
+      "id": "P06",
+      "theme": "春雨",
+      "input_type": "image_description",
+      "input": {
+        "image_caption": "江南小巷青石板路，细雨蒙蒙，撑伞女子缓行"
+      },
+      "instruction": "请根据画面描写“江南小巷青石板路，细雨蒙蒙，撑伞女子缓行”，创作一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P07",
+      "theme": "春雨",
+      "input_type": "style_imitation",
+      "input": {
+        "topic": "春雨",
+        "style": "杜甫"
+      },
+      "instruction": "请模仿杜甫沉郁顿挫的风格，以“春雨”为题写一首五言律诗。",
+      "format_spec": {
+        "type": "lvshi5",
+        "lines": 8,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P08",
+      "theme": "春雨",
+      "input_type": "format_jueju5",
+      "input": {
+        "topic": "春日喜雨"
+      },
+      "instruction": "请以“春日喜雨”为题，写一首五言绝句。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P09",
+      "theme": "春雨",
+      "input_type": "format_jueju7",
+      "input": {
+        "topic": "春雨夜行"
+      },
+      "instruction": "请以“春雨夜行”为题，写一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P10",
+      "theme": "春雨",
+      "input_type": "format_lvshi",
+      "input": {
+        "topic": "春雨润物"
+      },
+      "instruction": "请以“春雨润物”为题，写一首七言律诗。",
+      "format_spec": {
+        "type": "lvshi7",
+        "lines": 8,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P11",
+      "theme": "边塞",
+      "input_type": "topic_only",
+      "input": {
+        "topic": "边塞征戍"
+      },
+      "instruction": "请以“边塞征戍”为主题，写一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P12",
+      "theme": "边塞",
+      "input_type": "topic_keywords",
+      "input": {
+        "topic": "边塞",
+        "keywords": [
+          "大漠",
+          "孤烟",
+          "长河"
+        ]
+      },
+      "instruction": "请以“边塞”为主题，使用关键词“大漠、孤烟、长河”，写一首五言绝句。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P13",
+      "theme": "边塞",
+      "input_type": "first_line",
+      "input": {
+        "first_line": "葡萄美酒夜光杯"
+      },
+      "instruction": "请以“葡萄美酒夜光杯”为首句，续写完成一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P14",
+      "theme": "边塞",
+      "input_type": "acrostic",
+      "input": {
+        "acrostic_chars": "塞外征人"
+      },
+      "instruction": "请写一首藏头诗（五言绝句），每句首字依次为：塞、外、征、人。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5,
+        "acrostic": "塞外征人"
+      }
+    },
+    {
+      "id": "P15",
+      "theme": "边塞",
+      "input_type": "ci_pai",
+      "input": {
+        "rhythmic": "渔家傲",
+        "topic": "边塞秋思"
+      },
+      "instruction": "请按《渔家傲》词牌格律创作一首词，主题为“边塞秋思”。",
+      "format_spec": {
+        "type": "ci",
+        "rhythmic": "渔家傲"
+      }
+    },
+    {
+      "id": "P16",
+      "theme": "边塞",
+      "input_type": "image_description",
+      "input": {
+        "image_caption": "黄沙漫天，烽火台上孤烟直上，远处铁骑列阵"
+      },
+      "instruction": "请根据画面“黄沙漫天，烽火台上孤烟直上，远处铁骑列阵”，创作一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P17",
+      "theme": "边塞",
+      "input_type": "style_imitation",
+      "input": {
+        "topic": "边塞",
+        "style": "王昌龄"
+      },
+      "instruction": "请模仿王昌龄边塞诗的雄浑风格，写一首七言绝句，主题为“出塞”。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P18",
+      "theme": "边塞",
+      "input_type": "format_jueju5",
+      "input": {
+        "topic": "塞上闻笛"
+      },
+      "instruction": "请以“塞上闻笛”为题，写一首五言绝句。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P19",
+      "theme": "边塞",
+      "input_type": "format_jueju7",
+      "input": {
+        "topic": "凉州夜歌"
+      },
+      "instruction": "请以“凉州夜歌”为题，写一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P20",
+      "theme": "边塞",
+      "input_type": "format_lvshi",
+      "input": {
+        "topic": "塞外征戍"
+      },
+      "instruction": "请以“塞外征戍”为题，写一首五言律诗。",
+      "format_spec": {
+        "type": "lvshi5",
+        "lines": 8,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P21",
+      "theme": "离别",
+      "input_type": "topic_only",
+      "input": {
+        "topic": "送别友人"
+      },
+      "instruction": "请以“送别友人”为主题，写一首五言绝句。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P22",
+      "theme": "离别",
+      "input_type": "topic_keywords",
+      "input": {
+        "topic": "离别",
+        "keywords": [
+          "长亭",
+          "杨柳",
+          "孤帆"
+        ]
+      },
+      "instruction": "请以“离别”为主题，使用关键词“长亭、杨柳、孤帆”，写一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P23",
+      "theme": "离别",
+      "input_type": "first_line",
+      "input": {
+        "first_line": "孤帆远影碧空尽"
+      },
+      "instruction": "请以“孤帆远影碧空尽”为首句，续写完成一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P24",
+      "theme": "离别",
+      "input_type": "acrostic",
+      "input": {
+        "acrostic_chars": "送君千里"
+      },
+      "instruction": "请写一首藏头诗（七言绝句），每句首字依次为：送、君、千、里。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7,
+        "acrostic": "送君千里"
+      }
+    },
+    {
+      "id": "P25",
+      "theme": "离别",
+      "input_type": "ci_pai",
+      "input": {
+        "rhythmic": "雨霖铃",
+        "topic": "别离"
+      },
+      "instruction": "请按《雨霖铃》词牌格律创作一首词，主题为“别离”。",
+      "format_spec": {
+        "type": "ci",
+        "rhythmic": "雨霖铃"
+      }
+    },
+    {
+      "id": "P26",
+      "theme": "离别",
+      "input_type": "image_description",
+      "input": {
+        "image_caption": "渡口杨柳依依，友人挥手登舟，江上烟波茫茫"
+      },
+      "instruction": "请根据画面“渡口杨柳依依，友人挥手登舟，江上烟波茫茫”，写一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P27",
+      "theme": "离别",
+      "input_type": "style_imitation",
+      "input": {
+        "topic": "送别",
+        "style": "王维"
+      },
+      "instruction": "请模仿王维清新自然的风格，写一首五言绝句，主题为“山中送别”。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P28",
+      "theme": "离别",
+      "input_type": "format_jueju5",
+      "input": {
+        "topic": "灞桥折柳"
+      },
+      "instruction": "请以“灞桥折柳”为题，写一首五言绝句。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P29",
+      "theme": "离别",
+      "input_type": "format_jueju7",
+      "input": {
+        "topic": "黄鹤楼送别"
+      },
+      "instruction": "请以“黄鹤楼送别”为题，写一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P30",
+      "theme": "离别",
+      "input_type": "format_lvshi",
+      "input": {
+        "topic": "羁旅惜别"
+      },
+      "instruction": "请以“羁旅惜别”为题，写一首七言律诗。",
+      "format_spec": {
+        "type": "lvshi7",
+        "lines": 8,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P31",
+      "theme": "月夜",
+      "input_type": "topic_only",
+      "input": {
+        "topic": "月夜思乡"
+      },
+      "instruction": "请以“月夜思乡”为主题，写一首五言绝句。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P32",
+      "theme": "月夜",
+      "input_type": "topic_keywords",
+      "input": {
+        "topic": "月夜",
+        "keywords": [
+          "明月",
+          "霜",
+          "孤影"
+        ]
+      },
+      "instruction": "请以“月夜”为主题，使用关键词“明月、霜、孤影”，写一首五言绝句。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P33",
+      "theme": "月夜",
+      "input_type": "first_line",
+      "input": {
+        "first_line": "床前明月光"
+      },
+      "instruction": "请以“床前明月光”为首句，续写完成一首五言绝句。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P34",
+      "theme": "月夜",
+      "input_type": "acrostic",
+      "input": {
+        "acrostic_chars": "明月清风"
+      },
+      "instruction": "请写一首藏头诗（五言绝句），每句首字依次为：明、月、清、风。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5,
+        "acrostic": "明月清风"
+      }
+    },
+    {
+      "id": "P35",
+      "theme": "月夜",
+      "input_type": "ci_pai",
+      "input": {
+        "rhythmic": "水调歌头",
+        "topic": "中秋望月"
+      },
+      "instruction": "请按《水调歌头》词牌格律创作一首词，主题为“中秋望月”。",
+      "format_spec": {
+        "type": "ci",
+        "rhythmic": "水调歌头"
+      }
+    },
+    {
+      "id": "P36",
+      "theme": "月夜",
+      "input_type": "image_description",
+      "input": {
+        "image_caption": "深秋庭院，明月当空，落叶满阶，独坐听虫"
+      },
+      "instruction": "请根据画面“深秋庭院，明月当空，落叶满阶，独坐听虫”，写一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P37",
+      "theme": "月夜",
+      "input_type": "style_imitation",
+      "input": {
+        "topic": "月夜独酌",
+        "style": "李白"
+      },
+      "instruction": "请模仿李白飘逸豪放的风格，写一首五言绝句，主题为“月夜独酌”。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P38",
+      "theme": "月夜",
+      "input_type": "format_jueju5",
+      "input": {
+        "topic": "山月独行"
+      },
+      "instruction": "请以“山月独行”为题，写一首五言绝句。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P39",
+      "theme": "月夜",
+      "input_type": "format_jueju7",
+      "input": {
+        "topic": "江楼望月"
+      },
+      "instruction": "请以“江楼望月”为题，写一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P40",
+      "theme": "月夜",
+      "input_type": "format_lvshi",
+      "input": {
+        "topic": "秋夜思怀"
+      },
+      "instruction": "请以“秋夜思怀”为题，写一首五言律诗。",
+      "format_spec": {
+        "type": "lvshi5",
+        "lines": 8,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P41",
+      "theme": "江南",
+      "input_type": "topic_only",
+      "input": {
+        "topic": "江南春景"
+      },
+      "instruction": "请以“江南春景”为主题，写一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P42",
+      "theme": "江南",
+      "input_type": "topic_keywords",
+      "input": {
+        "topic": "江南",
+        "keywords": [
+          "杏花",
+          "烟雨",
+          "乌篷"
+        ]
+      },
+      "instruction": "请以“江南”为主题，使用关键词“杏花、烟雨、乌篷”，写一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P43",
+      "theme": "江南",
+      "input_type": "first_line",
+      "input": {
+        "first_line": "日出江花红胜火"
+      },
+      "instruction": "请以“日出江花红胜火”为首句，续写完成一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P44",
+      "theme": "江南",
+      "input_type": "acrostic",
+      "input": {
+        "acrostic_chars": "江南好景"
+      },
+      "instruction": "请写一首藏头诗（七言绝句），每句首字依次为：江、南、好、景。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7,
+        "acrostic": "江南好景"
+      }
+    },
+    {
+      "id": "P45",
+      "theme": "江南",
+      "input_type": "ci_pai",
+      "input": {
+        "rhythmic": "浣溪沙",
+        "topic": "江南春日"
+      },
+      "instruction": "请按《浣溪沙》词牌格律创作一首词，主题为“江南春日”。",
+      "format_spec": {
+        "type": "ci",
+        "rhythmic": "浣溪沙"
+      }
+    },
+    {
+      "id": "P46",
+      "theme": "江南",
+      "input_type": "image_description",
+      "input": {
+        "image_caption": "西湖断桥残雪，远山如黛，柳枝拂水"
+      },
+      "instruction": "请根据画面“西湖断桥残雪，远山如黛，柳枝拂水”，写一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P47",
+      "theme": "江南",
+      "input_type": "style_imitation",
+      "input": {
+        "topic": "江南忆",
+        "style": "白居易"
+      },
+      "instruction": "请模仿白居易《忆江南》的风格，写一首小令，主题为“江南忆”。",
+      "format_spec": {
+        "type": "ci",
+        "rhythmic": "忆江南"
+      }
+    },
+    {
+      "id": "P48",
+      "theme": "江南",
+      "input_type": "format_jueju5",
+      "input": {
+        "topic": "江畔独步"
+      },
+      "instruction": "请以“江畔独步”为题，写一首五言绝句。",
+      "format_spec": {
+        "type": "jueju5",
+        "lines": 4,
+        "chars_per_line": 5
+      }
+    },
+    {
+      "id": "P49",
+      "theme": "江南",
+      "input_type": "format_jueju7",
+      "input": {
+        "topic": "苏堤春晓"
+      },
+      "instruction": "请以“苏堤春晓”为题，写一首七言绝句。",
+      "format_spec": {
+        "type": "jueju7",
+        "lines": 4,
+        "chars_per_line": 7
+      }
+    },
+    {
+      "id": "P50",
+      "theme": "江南",
+      "input_type": "format_lvshi",
+      "input": {
+        "topic": "秦淮夜泊"
+      },
+      "instruction": "请以“秦淮夜泊”为题，写一首七言律诗。",
+      "format_spec": {
+        "type": "lvshi7",
+        "lines": 8,
+        "chars_per_line": 7
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+prompt_id,theme,input_type,model,output,fluency_1to5,relevance_1to5,format_1to5,style_1to5,poetic_1to5,note
+P01,春雨,topic_only,lstm,,,,,,
+P01,春雨,topic_only,deepseek_zero_shot,,,,,,
+P01,春雨,topic_only,deepseek_few_shot,,,,,,
+P01,春雨,topic_only,deepseek_cot,,,,,,
+P01,春雨,topic_only,zhipu_zero_shot,,,,,,
+P01,春雨,topic_only,gpt2_lora,,,,,,
